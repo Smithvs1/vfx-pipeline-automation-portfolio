@@ -1,0 +1,49 @@
+$ python -m provenance_tracker ingest sample_data/genai_events.jsonl
+ingested 88 events | 1 duplicates skipped | 1 rejected
+  REJECTED line 90 (evt_0089): prompt references unknown asset upl_missing
+
+$ python -m provenance_tracker lineage out_0003
+out_0003 [video, generated, NVD_gen_0003.mp4]
+  <- gen_0003 via lumen/lumen-vid-4-turbo by artist-03 at 2026-11-02T10:55:02Z
+     + audio prompt prm_0004:
+         upl_0001 [audio, upload, temp_vo_scene12_take3.wav]
+     + video prompt prm_0005:
+         out_0002 [video, generated, NVD_gen_0002.mp4]
+           <- gen_0002 via lumen/lumen-vid-3 by artist-07 at 2026-11-02T10:13:13Z
+              + image prompt prm_0002:
+                  out_0001 [image, generated, NVD_gen_0001.png]
+                    <- gen_0001 via lumen/lumen-img-2 by artist-07 at 2026-11-02T09:32:12Z
+                       + text prompt prm_0001: "frozen alien moon at dusk, twin suns low on the horizon, volumetric haze"
+              + text prompt prm_0003: "slow dolly forward across the ice, light snow falling"
+
+3 generation(s) deep | models: lumen-img-2, lumen-vid-3, lumen-vid-4-turbo
+root inputs:
+  - uploaded_audio: upl_0001 (temp_vo_scene12_take3.wav)
+  - text_prompt: "frozen alien moon at dusk, twin suns low on the horizon, volumetric haze"
+  - text_prompt: "slow dolly forward across the ice, light snow falling"
+
+$ python -m provenance_tracker impact out_0001
+2 generated asset(s) derive from out_0001:
+  out_0002  video  NVD  downloaded 1x
+  out_0003  video  NVD  downloaded 1x
+
+$ python -m provenance_tracker audit
+download  show user       asset     type   depth hash      models
+dl_0001   NVD  artist-03  out_0003  video  3     ok        lumen-img-2, lumen-vid-3, lumen-vid-4-turbo
+dl_0002   NVD  artist-11  out_0002  video  2     ok        lumen-img-2, lumen-vid-3
+dl_0003   HBL  artist-09  out_0007  image  1     ok        lumen-img-2
+dl_0004   HBL  artist-09  out_0009  video  2     ok        lumen-img-2, lumen-vid-4-turbo
+dl_0005   HBL  artist-09  out_0011  video  2     ok        lumen-img-2, lumen-vid-3
+dl_0006   HBL  artist-09  out_0013  video  2     ok        lumen-img-2, lumen-vid-4-turbo
+dl_0007   HBL  artist-02  out_0015  video  1     ok        lumen-vid-3
+dl_0008   HBL  artist-02  out_0018  video  1     ok        lumen-vid-3
+dl_0009   NVD  artist-11  out_0021  video  1     ok        lumen-vid-3
+dl_0010   HBL  artist-09  out_0029  video  2     ok        lumen-img-2, lumen-vid-3
+dl_0011   NVD  artist-03  out_0030  video  1     ok        lumen-vid-3
+dl_0012   HBL  artist-09  out_0031  audio  1     ok        chorus-tts-1
+dl_0013   HBL  artist-02  out_0009  video  2     MISMATCH  lumen-img-2, lumen-vid-4-turbo
+
+1 download(s) don't match the generated file's hash (modified or re-encoded after download)
+
+$ python -m provenance_tracker verify
+ledger intact: 88 events, hash chain verified

@@ -1,0 +1,286 @@
+{
+  "show": "Nova Drift",
+  "as_of": "2026-11-16",
+  "totals": {
+    "shots": 26,
+    "closed": 4,
+    "percent_complete": 15.4,
+    "by_status": {
+      "ip": 11,
+      "wtg": 4,
+      "apr": 2,
+      "rev": 2,
+      "invalid": 2,
+      "rdy": 2,
+      "fin": 1,
+      "hld": 1,
+      "omt": 1
+    }
+  },
+  "overdue": [
+    {
+      "shot": "NVD_101_STM_0030",
+      "due": "2026-11-08",
+      "days_late": 8,
+      "status": "rev",
+      "vendor": "NLD"
+    },
+    {
+      "shot": "NVD_101_ARR_0030",
+      "due": "2026-11-10",
+      "days_late": 6,
+      "status": "ip",
+      "vendor": "PFX"
+    }
+  ],
+  "due_next_14_days": [
+    {
+      "shot": "nvd_101_bse_60",
+      "due": "2026-11-18",
+      "status": "ip",
+      "vendor": "NLD"
+    },
+    {
+      "shot": "NVD_101_ARR_0040",
+      "due": "2026-11-20",
+      "status": "rev",
+      "vendor": "NLD"
+    },
+    {
+      "shot": "NVD-101-ARR-0050",
+      "due": "2026-11-25",
+      "status": "ip",
+      "vendor": "NLD"
+    },
+    {
+      "shot": "NVD_101_ARR_0060",
+      "due": "2026-11-28",
+      "status": "done",
+      "vendor": "PFX"
+    },
+    {
+      "shot": "NVD_101_BSE_0010",
+      "due": "2026-11-30",
+      "status": "ip",
+      "vendor": null
+    }
+  ],
+  "vendors": {
+    "EAS": {
+      "active": 4,
+      "waiting": 2,
+      "bid_days_open": 24,
+      "shots": [
+        "NVD_101_BSE_0020",
+        "NVD_101_BSE_0030",
+        "NVD_101_BSE_0040",
+        "NVD_101_BSE_0040",
+        "NVD_102_CAV_0020",
+        "NVD_102_CAV_0030"
+      ],
+      "name": "Ember & Ash Studios",
+      "capacity": 6,
+      "vendor_active": true
+    },
+    "NLD": {
+      "active": 5,
+      "waiting": 0,
+      "bid_days_open": 27,
+      "shots": [
+        "NVD_101_ARR_0040",
+        "NVD-101-ARR-0050",
+        "nvd_101_bse_60",
+        "NVD_101_STM_0030",
+        "NVD_102_ESC_0010"
+      ],
+      "name": "Northlight Digital",
+      "capacity": 6,
+      "vendor_active": true
+    },
+    "ORB": {
+      "active": 1,
+      "waiting": 1,
+      "bid_days_open": 16,
+      "shots": [
+        "NVD_101_BSE_0050",
+        "NVD_102_ESC_0030"
+      ],
+      "name": "Orbit Lane Post",
+      "capacity": 0,
+      "vendor_active": false
+    },
+    "PFX": {
+      "active": 4,
+      "waiting": 1,
+      "bid_days_open": 78,
+      "shots": [
+        "NVD_101_ARR_0030",
+        "NVD_101_ARR_0060",
+        "NVD_101_STM_0010",
+        "NVD_101_STM_0020",
+        "NVD_102_CAV_0040",
+        "NVD_102_CAV_0050",
+        "NVD_102_ESC_0040"
+      ],
+      "name": "Pixelforge VFX",
+      "capacity": 3,
+      "vendor_active": true
+    }
+  },
+  "data_errors": [
+    {
+      "row": 3,
+      "shot_code": "NVD_101_ARR_0030",
+      "rule": "missing_field",
+      "severity": "error",
+      "field": "description",
+      "message": "'description' is empty"
+    },
+    {
+      "row": 5,
+      "shot_code": "NVD-101-ARR-0050",
+      "rule": "naming_convention",
+      "severity": "error",
+      "field": "shot_code",
+      "message": "'NVD-101-ARR-0050' does not match NVD_<EP###>_<SEQ>_<####>"
+    },
+    {
+      "row": 6,
+      "shot_code": "NVD_101_ARR_0060",
+      "rule": "invalid_status",
+      "severity": "error",
+      "field": "status",
+      "message": "status 'done' is not one of: wtg, rdy, ip, rev, apr, fin, omt, hld"
+    },
+    {
+      "row": 7,
+      "shot_code": "NVD_101_BSE_0010",
+      "rule": "missing_vendor",
+      "severity": "error",
+      "field": "vendor_id",
+      "message": "status 'ip' but no vendor assigned"
+    },
+    {
+      "row": 10,
+      "shot_code": "NVD_101_BSE_0040",
+      "rule": "duplicate_shot",
+      "severity": "error",
+      "field": "shot_code",
+      "message": "shot code appears 2 times"
+    },
+    {
+      "row": 10,
+      "shot_code": "NVD_101_BSE_0040",
+      "rule": "frame_range",
+      "severity": "error",
+      "field": "frame_out",
+      "message": "frame_out 1040 is before frame_in 1100"
+    },
+    {
+      "row": 11,
+      "shot_code": "NVD_101_BSE_0040",
+      "rule": "duplicate_shot",
+      "severity": "error",
+      "field": "shot_code",
+      "message": "shot code appears 2 times"
+    },
+    {
+      "row": 12,
+      "shot_code": "NVD_101_BSE_0050",
+      "rule": "inactive_vendor",
+      "severity": "error",
+      "field": "vendor_id",
+      "message": "assigned to inactive vendor Orbit Lane Post"
+    },
+    {
+      "row": 13,
+      "shot_code": "nvd_101_bse_60",
+      "rule": "naming_convention",
+      "severity": "error",
+      "field": "shot_code",
+      "message": "'nvd_101_bse_60' does not match NVD_<EP###>_<SEQ>_<####>"
+    },
+    {
+      "row": 19,
+      "shot_code": "NVD_102_CAV_0020",
+      "rule": "missing_field",
+      "severity": "error",
+      "field": "bid_days",
+      "message": "'bid_days' is empty"
+    },
+    {
+      "row": 21,
+      "shot_code": "NVD_102_CAV_0040",
+      "rule": "date_format",
+      "severity": "error",
+      "field": "due_date",
+      "message": "due_date '12/19/2026' is not YYYY-MM-DD"
+    },
+    {
+      "row": 25,
+      "shot_code": "NVD_102_ESC_0030",
+      "rule": "inactive_vendor",
+      "severity": "error",
+      "field": "vendor_id",
+      "message": "assigned to inactive vendor Orbit Lane Post"
+    },
+    {
+      "row": 26,
+      "shot_code": "NVD_102_ESC_0040",
+      "rule": "invalid_status",
+      "severity": "error",
+      "field": "status",
+      "message": "status 'in progress' is not one of: wtg, rdy, ip, rev, apr, fin, omt, hld"
+    }
+  ],
+  "data_warnings": [
+    {
+      "row": 3,
+      "shot_code": "NVD_101_ARR_0030",
+      "rule": "vendor_over_capacity",
+      "severity": "warning",
+      "field": "vendor_id",
+      "message": "Pixelforge VFX has 4 active shots (limit 3)"
+    },
+    {
+      "row": 7,
+      "shot_code": "NVD_101_BSE_0010",
+      "rule": "missing_artist",
+      "severity": "warning",
+      "field": "artist",
+      "message": "status 'ip' but no artist assigned"
+    },
+    {
+      "row": 14,
+      "shot_code": "NVD_101_STM_0010",
+      "rule": "vendor_over_capacity",
+      "severity": "warning",
+      "field": "vendor_id",
+      "message": "Pixelforge VFX has 4 active shots (limit 3)"
+    },
+    {
+      "row": 18,
+      "shot_code": "NVD_102_CAV_0010",
+      "rule": "missing_vendor",
+      "severity": "warning",
+      "field": "vendor_id",
+      "message": "not yet awarded to a vendor"
+    },
+    {
+      "row": 21,
+      "shot_code": "NVD_102_CAV_0040",
+      "rule": "vendor_over_capacity",
+      "severity": "warning",
+      "field": "vendor_id",
+      "message": "Pixelforge VFX has 4 active shots (limit 3)"
+    },
+    {
+      "row": 22,
+      "shot_code": "NVD_102_CAV_0050",
+      "rule": "vendor_over_capacity",
+      "severity": "warning",
+      "field": "vendor_id",
+      "message": "Pixelforge VFX has 4 active shots (limit 3)"
+    }
+  ]
+}

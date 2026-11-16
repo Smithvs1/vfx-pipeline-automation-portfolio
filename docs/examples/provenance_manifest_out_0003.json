@@ -1,0 +1,227 @@
+{
+  "manifest_version": "1.0",
+  "asset": {
+    "asset_id": "out_0003",
+    "origin": "generated",
+    "media_type": "video",
+    "sha256": "3a44213ced701efcaf3db2447492d136818184c0a4924446034a0b343238d311",
+    "filename": "NVD_gen_0003.mp4",
+    "show": "NVD",
+    "created_by": "artist-03",
+    "created_ts": "2026-11-02T10:55:02Z",
+    "generation_id": "gen_0003"
+  },
+  "ai_generated": true,
+  "models_used": [
+    "lumen-img-2",
+    "lumen-vid-3",
+    "lumen-vid-4-turbo"
+  ],
+  "generations_deep": 3,
+  "root_inputs": [
+    {
+      "kind": "uploaded_audio",
+      "asset_id": "upl_0001",
+      "origin": "upload",
+      "media_type": "audio",
+      "sha256": "ed398a5ba4e6c6b4db6c603ead2a315f9c2d966c21dea5a2014908cfe5e14e8e",
+      "filename": "temp_vo_scene12_take3.wav",
+      "show": "NVD",
+      "created_by": "artist-03",
+      "created_ts": "2026-11-02T10:30:26Z",
+      "generation_id": null,
+      "prompt_id": "prm_0004"
+    },
+    {
+      "kind": "text_prompt",
+      "prompt_id": "prm_0001",
+      "modality": "text",
+      "text": "frozen alien moon at dusk, twin suns low on the horizon, volumetric haze",
+      "asset_id": null,
+      "show": "NVD",
+      "user_id": "artist-07",
+      "ts": "2026-11-02T09:11:09Z",
+      "tool": "lumen"
+    },
+    {
+      "kind": "text_prompt",
+      "prompt_id": "prm_0003",
+      "modality": "text",
+      "text": "slow dolly forward across the ice, light snow falling",
+      "asset_id": null,
+      "show": "NVD",
+      "user_id": "artist-07",
+      "ts": "2026-11-02T09:54:10Z",
+      "tool": "lumen"
+    }
+  ],
+  "downloads": [
+    {
+      "download_id": "dl_0001",
+      "user_id": "artist-03",
+      "ts": "2026-11-02T11:13:29Z",
+      "filename": "NVD_101_ARR_0010_previs_v003.mp4",
+      "sha256": "3a44213ced701efcaf3db2447492d136818184c0a4924446034a0b343238d311"
+    }
+  ],
+  "lineage": {
+    "asset": {
+      "asset_id": "out_0003",
+      "origin": "generated",
+      "media_type": "video",
+      "sha256": "3a44213ced701efcaf3db2447492d136818184c0a4924446034a0b343238d311",
+      "filename": "NVD_gen_0003.mp4",
+      "show": "NVD",
+      "created_by": "artist-03",
+      "created_ts": "2026-11-02T10:55:02Z",
+      "generation_id": "gen_0003"
+    },
+    "generation": {
+      "generation_id": "gen_0003",
+      "tool": "lumen",
+      "model": "lumen-vid-4-turbo",
+      "params": {
+        "duration_s": 6,
+        "motion_strength": 0.4,
+        "seed": 300026768
+      },
+      "show": "NVD",
+      "user_id": "artist-03",
+      "ts": "2026-11-02T10:55:02Z",
+      "output_asset_id": "out_0003"
+    },
+    "prompts": [
+      {
+        "prompt": {
+          "prompt_id": "prm_0004",
+          "modality": "audio",
+          "text": null,
+          "asset_id": "upl_0001",
+          "show": "NVD",
+          "user_id": "artist-03",
+          "ts": "2026-11-02T10:32:31Z",
+          "tool": "lumen"
+        },
+        "source": {
+          "asset": {
+            "asset_id": "upl_0001",
+            "origin": "upload",
+            "media_type": "audio",
+            "sha256": "ed398a5ba4e6c6b4db6c603ead2a315f9c2d966c21dea5a2014908cfe5e14e8e",
+            "filename": "temp_vo_scene12_take3.wav",
+            "show": "NVD",
+            "created_by": "artist-03",
+            "created_ts": "2026-11-02T10:30:26Z",
+            "generation_id": null
+          }
+        }
+      },
+      {
+        "prompt": {
+          "prompt_id": "prm_0005",
+          "modality": "video",
+          "text": null,
+          "asset_id": "out_0002",
+          "show": "NVD",
+          "user_id": "artist-03",
+          "ts": "2026-11-02T10:46:57Z",
+          "tool": "lumen"
+        },
+        "source": {
+          "asset": {
+            "asset_id": "out_0002",
+            "origin": "generated",
+            "media_type": "video",
+            "sha256": "bc59f276c7ca13e0e8f461c2d1c01830c7b661a608924769adf563328c9ab30d",
+            "filename": "NVD_gen_0002.mp4",
+            "show": "NVD",
+            "created_by": "artist-07",
+            "created_ts": "2026-11-02T10:13:13Z",
+            "generation_id": "gen_0002"
+          },
+          "generation": {
+            "generation_id": "gen_0002",
+            "tool": "lumen",
+            "model": "lumen-vid-3",
+            "params": {
+              "duration_s": 6,
+              "fps": 24,
+              "seed": 1570621945
+            },
+            "show": "NVD",
+            "user_id": "artist-07",
+            "ts": "2026-11-02T10:13:13Z",
+            "output_asset_id": "out_0002"
+          },
+          "prompts": [
+            {
+              "prompt": {
+                "prompt_id": "prm_0002",
+                "modality": "image",
+                "text": null,
+                "asset_id": "out_0001",
+                "show": "NVD",
+                "user_id": "artist-07",
+                "ts": "2026-11-02T09:36:04Z",
+                "tool": "lumen"
+              },
+              "source": {
+                "asset": {
+                  "asset_id": "out_0001",
+                  "origin": "generated",
+                  "media_type": "image",
+                  "sha256": "436e7cc46e42b7901fe91723d3ddfdfab0ef44d3f0818d5a1a791c1c43638e52",
+                  "filename": "NVD_gen_0001.png",
+                  "show": "NVD",
+                  "created_by": "artist-07",
+                  "created_ts": "2026-11-02T09:32:12Z",
+                  "generation_id": "gen_0001"
+                },
+                "generation": {
+                  "generation_id": "gen_0001",
+                  "tool": "lumen",
+                  "model": "lumen-img-2",
+                  "params": {
+                    "height": 858,
+                    "seed": 1695753999,
+                    "width": 2048
+                  },
+                  "show": "NVD",
+                  "user_id": "artist-07",
+                  "ts": "2026-11-02T09:32:12Z",
+                  "output_asset_id": "out_0001"
+                },
+                "prompts": [
+                  {
+                    "prompt": {
+                      "prompt_id": "prm_0001",
+                      "modality": "text",
+                      "text": "frozen alien moon at dusk, twin suns low on the horizon, volumetric haze",
+                      "asset_id": null,
+                      "show": "NVD",
+                      "user_id": "artist-07",
+                      "ts": "2026-11-02T09:11:09Z",
+                      "tool": "lumen"
+                    }
+                  }
+                ]
+              }
+            },
+            {
+              "prompt": {
+                "prompt_id": "prm_0003",
+                "modality": "text",
+                "text": "slow dolly forward across the ice, light snow falling",
+                "asset_id": null,
+                "show": "NVD",
+                "user_id": "artist-07",
+                "ts": "2026-11-02T09:54:10Z",
+                "tool": "lumen"
+              }
+            }
+          ]
+        }
+      }
+    ]
+  }
+}

@@ -1,0 +1,19 @@
+[project]
+name = "vfx-pipeline-automation-portfolio"
+version = "1.0.0"
+description = "Python automation and AI workflows for VFX / media production (portfolio, fictional data)"
+requires-python = ">=3.10"
+dependencies = ["requests>=2.31"]
+
+[project.optional-dependencies]
+dev = ["pytest>=8", "ruff>=0.5"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+
+[tool.ruff]
+line-length = 120
+target-version = "py310"
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B"]

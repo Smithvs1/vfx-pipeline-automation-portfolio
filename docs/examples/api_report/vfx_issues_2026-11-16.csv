@@ -1,0 +1,22 @@
+row,shot_code,severity,rule,field,message
+3,NVD_101_ARR_0030,error,missing_field,description,'description' is empty
+3,NVD_101_ARR_0030,warning,overdue,due_date,due 2026-11-10 (6 days ago) but status is 'ip'
+3,NVD_101_ARR_0030,warning,vendor_over_capacity,vendor_id,Pixelforge VFX has 4 active shots (limit 3)
+5,NVD-101-ARR-0050,error,naming_convention,shot_code,'NVD-101-ARR-0050' does not match NVD_<EP###>_<SEQ>_<####>
+6,NVD_101_ARR_0060,error,invalid_status,status,"status 'done' is not one of: wtg, rdy, ip, rev, apr, fin, omt, hld"
+7,NVD_101_BSE_0010,error,missing_vendor,vendor_id,status 'ip' but no vendor assigned
+7,NVD_101_BSE_0010,warning,missing_artist,artist,status 'ip' but no artist assigned
+10,NVD_101_BSE_0040,error,duplicate_shot,shot_code,shot code appears 2 times
+10,NVD_101_BSE_0040,error,frame_range,frame_out,frame_out 1040 is before frame_in 1100
+11,NVD_101_BSE_0040,error,duplicate_shot,shot_code,shot code appears 2 times
+12,NVD_101_BSE_0050,error,inactive_vendor,vendor_id,assigned to inactive vendor Orbit Lane Post
+13,nvd_101_bse_60,error,naming_convention,shot_code,'nvd_101_bse_60' does not match NVD_<EP###>_<SEQ>_<####>
+14,NVD_101_STM_0010,warning,vendor_over_capacity,vendor_id,Pixelforge VFX has 4 active shots (limit 3)
+16,NVD_101_STM_0030,warning,overdue,due_date,due 2026-11-08 (8 days ago) but status is 'rev'
+18,NVD_102_CAV_0010,warning,missing_vendor,vendor_id,not yet awarded to a vendor
+19,NVD_102_CAV_0020,error,missing_field,bid_days,'bid_days' is empty
+21,NVD_102_CAV_0040,error,date_format,due_date,due_date '12/19/2026' is not YYYY-MM-DD
+21,NVD_102_CAV_0040,warning,vendor_over_capacity,vendor_id,Pixelforge VFX has 4 active shots (limit 3)
+22,NVD_102_CAV_0050,warning,vendor_over_capacity,vendor_id,Pixelforge VFX has 4 active shots (limit 3)
+25,NVD_102_ESC_0030,error,inactive_vendor,vendor_id,assigned to inactive vendor Orbit Lane Post
+26,NVD_102_ESC_0040,error,invalid_status,status,"status 'in progress' is not one of: wtg, rdy, ip, rev, apr, fin, omt, hld"
