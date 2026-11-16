@@ -90,7 +90,7 @@ flowchart LR
 
 **Star Victoria**: VFX Coordinator / Production Manager and Pipeline & Automation Specialist. Los Angeles.
 
-- **Now:** GenAI / VFX Project Manager (contract), Amazon MGM Studios. I onboard shows and users to generative-AI
+- **Now:** GenAI / VFX MosAIc Project Manager, Amazon MGM Studios (via Populous). I onboard shows and users to generative-AI
   tools (Runway, Magnific, Krea, Topaz, ElevenLabs, ComfyUI...), manage credit usage, and automate intake and
   reporting with Python, APIs and webhooks.
 - **VFX coordination:** 1,700+ shots on *Michael* (Universal / Lionsgate) with ILM, Rising Sun Pictures and Cinesite.
