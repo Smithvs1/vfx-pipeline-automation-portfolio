@@ -17,3 +17,11 @@ jobs:
       - run: ruff check .
       - run: pytest -v
       - run: ./demo.sh
+  signedit-js:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22"
+      - run: node --check signedit/social-automation/scripts/generate-daily-content.js
